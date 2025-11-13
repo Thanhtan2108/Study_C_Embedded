@@ -8,6 +8,8 @@
 
 - Nhưng thực tế, không ai lại code extern ở nhiều file như vậy làm code ko đc clean, mình nên tạo ra 1 file.h sau đó extern biến/hàm vào đó rồi include vào file.c cần extern là được
 
+*** NÓI CÁCH KHÁC, EXTERN GIỐNG NHU LÀ TÍNH KẾ THỪA TRONG OOP, CHO PHÉP KẾ THỪA LẠI BIẾN HOẶC HÀM TỪ FILE.H/.C KHÁC
+
 ** Chú ý : Khi biên dịch để chạy chương trình cần biên dịch cả 2 file chứa biến/hàm được extern và file main.c cùng 1 lúc để linker có thể tìm thấy biến/hàm
     gcc các_file_cần_biên_dịch_1_lúc -o tên_file_thực_thi.exe
     ./tên_file_thực_thi.exe để run

@@ -1,40 +1,35 @@
 /*
-* PHẦN 1: TRUYỀN THAM SỐ BÌNH THƯỜNG VS TRUYỀN CON TRỎ
-* 1. Truyền tham số bình thường (pass by value):
-*    - Tạo ra một bản sao của dữ liệu
-*    - Không thay đổi được giá trị gốc
-*    - Tốn bộ nhớ vì phải copy dữ liệu
-*    - Nên dùng khi: chỉ cần đọc dữ liệu, không cần thay đổi giá trị gốc
-*
-* 2. Truyền con trỏ (pass by reference):
-*    - Truyền địa chỉ của dữ liệu
-*    - Có thể thay đổi được giá trị gốc
-*    - Tiết kiệm bộ nhớ vì không copy dữ liệu
-*    - Nên dùng khi: cần thay đổi giá trị gốc hoặc struct có kích thước lớn
-*
-* PHẦN 2: STRUCT BÌNH THƯỜNG VS STRUCT CON TRỎ
-* 1. Struct bình thường:
-*    - Được cấp phát sẵn trên stack
-*    - Kích thước cố định
-*    - Tự động giải phóng khi ra khỏi scope
-*    - Nên dùng khi: kích thước nhỏ, số lượng ít, biết trước số lượng
-*
-* 2. Struct con trỏ (với cấp phát động):
-*    - Được cấp phát trên heap thông qua malloc
-*    - Kích thước có thể thay đổi
-*    - Phải tự giải phóng bằng free
-*    - Nên dùng khi: kích thước lớn, số lượng nhiều, không biết trước số lượng
-*
-* PHẦN 3: TẠI SAO CẦN CẤP PHÁT ĐỘNG
-* 1. Nếu không cấp phát động:
-*    - Con trỏ trỏ đến vùng nhớ không xác định -> crash chương trình
-*    - Không thể mở rộng kích thước khi cần
-*    - Bộ nhớ stack bị giới hạn
-*
-* 2. Khi cấp phát động:
-*    - Quản lý được vùng nhớ heap
-*    - Có thể mở rộng/thu hẹp kích thước khi cần
-*    - Tránh tràn stack khi dữ liệu lớn
+PHẦN 1: TRUYỀN THAM SỐ BÌNH THƯỜNG VS TRUYỀN CON TRỎ
+1. Truyền tham số bình thường (pass by value):
+   - Tạo ra một bản sao của dữ liệu
+   - Không thay đổi được giá trị gốc
+   - Tốn bộ nhớ vì phải copy dữ liệu
+   - Nên dùng khi: chỉ cần đọc dữ liệu, không cần thay đổi giá trị gốc
+2. Truyền con trỏ (pass by reference):
+   - Truyền địa chỉ của dữ liệu
+   - Có thể thay đổi được giá trị gốc
+   - Tiết kiệm bộ nhớ vì không copy dữ liệu
+   - Nên dùng khi: cần thay đổi giá trị gốc hoặc struct có kích thước lớn
+PHẦN 2: STRUCT BÌNH THƯỜNG VS STRUCT CON TRỎ
+1. Struct bình thường:
+   - Được cấp phát sẵn trên stack
+   - Kích thước cố định
+   - Tự động giải phóng khi ra khỏi scope
+   - Nên dùng khi: kích thước nhỏ, số lượng ít, biết trước số lượng
+2. Struct con trỏ (với cấp phát động):
+   - Được cấp phát trên heap thông qua malloc
+   - Kích thước có thể thay đổi
+   - Phải tự giải phóng bằng free
+   - Nên dùng khi: kích thước lớn, số lượng nhiều, không biết trước số lượng
+PHẦN 3: TẠI SAO CẦN CẤP PHÁT ĐỘNG
+1. Nếu không cấp phát động:
+   - Con trỏ trỏ đến vùng nhớ không xác định -> crash chương trình
+   - Không thể mở rộng kích thước khi cần
+   - Bộ nhớ stack bị giới hạn
+2. Khi cấp phát động:
+   - Quản lý được vùng nhớ heap
+   - Có thể mở rộng/thu hẹp kích thước khi cần
+   - Tránh tràn stack khi dữ liệu lớn
 */
 
 #include <stdio.h>

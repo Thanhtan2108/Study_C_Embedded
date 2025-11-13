@@ -1,20 +1,20 @@
-/**
- * Union trong C Embedded
- * 
- * 1. Union là gì?
- * - Union là kiểu dữ liệu do người dùng tự định nghĩa
- * - Các thành viên trong Union dùng chung một vùng nhớ, nghĩa là trong cấu trúc của 1 union tạo ra 1 vùng nhớ sẽ được chia nhỏ ra để quản lý 
- * - Kích thước của Union là kích thước của thành viên lớn nhất
- * 
- * 2. Khác biệt giữa Union và Struct:
- * - Struct: Các thành viên có địa chỉ khác nhau, kích thước = tổng các thành viên, quản lý 1 đối tượng thông qua nhiều KDL khác nhau
- * - Union: Các thành viên dùng chung địa chỉ, kích thước = max các thành viên, quản lý 1 đối tượng, có thể chia nhỏ đối tượng ra thành các bit để quản lý thông qua struct lồng
- * 
- * 3. Khi nào dùng Union?
- * - Khi muốn tiết kiệm bộ nhớ
- * - Khi làm việc với bit fields
- * - Khi làm việc với các protocol, driver
- */
+/*
+Union trong C Embedded
+
+1. Union là gì?
+- Union là kiểu dữ liệu do người dùng tự định nghĩa
+- Các thành viên trong Union dùng chung một vùng nhớ, nghĩa là trong cấu trúc của 1 union tạo ra 1 vùng nhớ sẽ được chia nhỏ ra để quản lý 
+- Kích thước của Union là kích thước của thành viên lớn nhất
+
+2. Khác biệt giữa Union và Struct:
+- Struct: Các thành viên có địa chỉ khác nhau, kích thước = tổng các thành viên, quản lý 1 đối tượng thông qua nhiều KDL khác nhau
+- Union: Các thành viên dùng chung địa chỉ, kích thước = max các thành viên, quản lý 1 đối tượng, có thể chia nhỏ đối tượng ra thành các bit để quản lý thông qua struct lồng
+
+3. Khi nào dùng Union?
+- Khi muốn tiết kiệm bộ nhớ
+- Khi làm việc với bit fields
+- Khi làm việc với các protocol, driver
+*/
 
 #include <stdio.h>
 #include <stdint.h>
