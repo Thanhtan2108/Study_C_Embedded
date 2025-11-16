@@ -11,7 +11,7 @@ Tùy theo nơi khai báo (trong hoặc ngoài hàm), static có ý nghĩa khác 
 | Trường hợp sử dụng     | Phạm vi truy cập (Scope)     | Thời gian tồn tại (Lifetime)     | Mục đích chính                   |
 | ---------------------- | ---------------------------- | -------------------------------- | -------------------------------- |
 | Biến toàn cục (global) | Giới hạn trong file khai báo | Suốt thời gian chạy chương trình | Ẩn biến trong nội bộ module      |
-| Biến cục bộ (local)    | Trong phạm vi hàm            | Suốt thời gian chạy chương trình | Giữ giá trị giữa các lần gọi hàm |
+| Biến cục bộ (local)    | Trong phạm vi hàm            | Suốt thời gian chạy chương trình | Giữ giá trị giữa các lần gọi hàm, biến không bị clear đi |
 | Hàm (function)         | Giới hạn trong file khai báo | Không đổi                        | Ẩn hàm trong nội bộ module       |
 
 3.1. Static với biến cục bộ
